@@ -184,12 +184,13 @@ module pmic(
         sel <= start_NULL;
         ld <= 0;
     end
-    else
+    else begin
         sel <= start;
         if(start == start_T1 || start == start_T2 || start == start_T3 || start == start_T4 || start == start_T5)
             ld <= 1;
         else
             ld <= 0;
+    end
     end
     
     always@(posedge clk or posedge reset)begin
