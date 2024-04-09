@@ -8,15 +8,15 @@ module timer(
     output reg [4:0] T
     );
     
-    reg limit;
-    reg counter;
+    reg [31:0] limit;
+    reg [31:0] counter;
     reg [4:0] en;
     
-    parameter T1 = 5;
-    parameter T2 = 6;
-    parameter T3 = 5;
-    parameter T4 = 3;
-    parameter T5 = 3;
+    parameter T1 = 5; //100000000;
+    parameter T2 = 6; //150000000;
+    parameter T3 = 5; //100000000;
+    parameter T4 = 3; //50000000;
+    parameter T5 = 3; //50000000;
     
     always@(*)begin
     case(sel)

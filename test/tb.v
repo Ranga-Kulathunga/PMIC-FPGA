@@ -27,56 +27,56 @@ module tb();
    
     // TEST 1:
     // power up and power down sequences with ON_OFF switch
-    #(2*half_cycle) reset <= 1'b0;
-    #(2*half_cycle) on_sw <= 1'b1;
-    #(30*half_cycle) on_sw <= 1'b0;
+   #(2*half_cycle) reset <= 1'b0;
+   #(2*half_cycle) on_sw <= 1'b1;
+   #(70*half_cycle) on_sw <= 1'b0;
     
     // TEST 2:
-    #(30*half_cycle) reset <= 1'b1;
-    #(2*half_cycle) reset <= 1'b0;
-    #(2*half_cycle) on_sw <= 1'b1;
-    // Active state to LP mode
-    #(30*half_cycle) lp_sw <= 1'b1;
-    // LP mode to LB mode
-    #(20*half_cycle) lb_sw <= 1'b1;
-    // LB mode to LP mode
-    #(20*half_cycle) lb_sw <= 1'b0;
-    // LP mode to Active state
-    #(20*half_cycle) lp_sw <= 1'b0;
-    #(30*half_cycle) on_sw <= 1'b0;
+   #(50*half_cycle) reset <= 1'b1;
+   #(2*half_cycle) reset <= 1'b0;
+   #(2*half_cycle) on_sw <= 1'b1;
+   // Active state to LP mode
+   #(60*half_cycle) lp_sw <= 1'b1;
+   // LP mode to LB mode
+   #(40*half_cycle) lb_sw <= 1'b1;
+   // LB mode to LP mode
+   #(30*half_cycle) lb_sw <= 1'b0;
+   // LP mode to Active state
+   #(40*half_cycle) lp_sw <= 1'b0;
+   #(30*half_cycle) on_sw <= 1'b0;
     
-    // TEST 3:
-    #(30*half_cycle) reset <= 1'b1;
-    #(2*half_cycle) reset <= 1'b0;
-    #(2*half_cycle) on_sw <= 1'b1;
-    // Active state to LB mode
-    #(30*half_cycle) lb_sw <= 1'b1;
-    // LB mode to LP mode
-    #(30*half_cycle) lp_sw <= 1'b1;
-    #(2*half_cycle) lb_sw <= 1'b0;
-    // LP mode to LB mode
-    #(20*half_cycle) lb_sw <= 1'b1;
-    #(2*half_cycle) lp_sw <= 1'b0;
-    // LB mode to Active state
-    #(20*half_cycle) lb_sw <= 1'b0;
-    #(30*half_cycle) on_sw <= 1'b0;
+   // TEST 3:
+   #(50*half_cycle) reset <= 1'b1;
+   #(2*half_cycle) reset <= 1'b0;
+   #(2*half_cycle) on_sw <= 1'b1;
+   // Active state to LB mode
+   #(60*half_cycle) lb_sw <= 1'b1;
+   // LB mode to LP mode
+   #(50*half_cycle) lp_sw <= 1'b1;
+   #(2*half_cycle) lb_sw <= 1'b0;
+   // LP mode to LB mode
+   #(20*half_cycle) lb_sw <= 1'b1;
+   #(2*half_cycle) lp_sw <= 1'b0;
+   // LB mode to Active state
+   #(40*half_cycle) lb_sw <= 1'b0;
+   #(50*half_cycle) on_sw <= 1'b0;
 
-    // TEST 4:
-    #(30*half_cycle) reset <= 1'b1;
-    #(2*half_cycle) reset <= 1'b0;
-    #(2*half_cycle) on_sw <= 1'b1;
-    // Active state to LB mode
-    #(30*half_cycle) lb_sw <= 1'b1;
-    // LB mode to IDLE
-    #(30*half_cycle) on_sw <= 1'b0;
+   // TEST 4:
+   #(50*half_cycle) reset <= 1'b1;
+   #(2*half_cycle) reset <= 1'b0;
+   #(2*half_cycle) on_sw <= 1'b1;
+   // Active state to LB mode
+   #(60*half_cycle) lb_sw <= 1'b1;
+   // LB mode to IDLE
+   #(50*half_cycle) on_sw <= 1'b0;
     
-    // TEST 5:
-    #(20*half_cycle) reset <= 1'b1;
+   // TEST 5:
+   #(50*half_cycle) reset <= 1'b1;
     #(2*half_cycle) reset <= 1'b0;
     #(2*half_cycle) lb_sw <= 1'b0;
     #(2*half_cycle) on_sw <= 1'b1;
     // Active state to LP mode
-    #(30*half_cycle) lp_sw <= 1'b1;
+    #(60*half_cycle) lp_sw <= 1'b1;
     // LP mode to IDLE
     #(30*half_cycle) on_sw <= 1'b0;
     
